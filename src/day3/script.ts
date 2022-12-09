@@ -10,7 +10,6 @@ async function day3(): Promise<void> {
   const priorityScoresForDupes = inputStr.split('\n').map((invLine) => {
     const firstCompartment = invLine.substring(0, invLine.length / 2);
     const secondCompartment = invLine.substring(invLine.length / 2);
-    const equalLenght = firstCompartment.length === secondCompartment.length;
     const doubledItem = firstCompartment.split('').find((char) => secondCompartment.includes(char));
     if (doubledItem) {
       const charCode = doubledItem.charCodeAt(0);
