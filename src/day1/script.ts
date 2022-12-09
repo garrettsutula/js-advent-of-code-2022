@@ -2,10 +2,9 @@ import { readFile } from 'fs/promises';
 
 async function day1part1(): Promise<void> {
 
-  const fileBuf = await readFile('input.txt');
+  const inputStr = await (await readFile('input.txt')).toString()
 
-  const elfInvCals = fileBuf
-    .toString()
+  const elfInvCals = inputStr
     .split('\n\n').map((elfInvStr) => elfInvStr.split('\n'))
     .map((elfInv) => elfInv.reduce((acc, invSlot) => acc + parseInt(invSlot), 0))
     .sort((a, b) => b - a);
